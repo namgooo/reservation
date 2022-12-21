@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" type="text/css" th:href="@{/bootstrap.min.css}">
+    <link rel="stylesheet" href="login.css">
+
+    <style>
+
+        *{margin: 0; padding: 0;}
+        @import url('https://fonts.googleapis.com/css2? family= Abril+Fatface & display=swap');
+
+        #warp{
+            height: 100vh;
+            background-color:darkslategray;
+        }
+
+        .header{
+            position: relative;
+            background-color:darkslategray;
+            top: 50px;
+            left: 0px;
+            width: 100%;
+            height: 100px;
+        }
+
+        .header h2{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 50px;
+            color:white;
+            font-family: 'Abril Fatface';
+        }
+
+        .main{
+            position: relative;
+            top: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1000px;
+            height: 750px;
+            background-color:darkslategray;
+        }
+
+        .main .box1{
+            position: absolute;
+            top: 180px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color:darkslategray;
+            width: 500px;
+            height: 100px;
+        }
+
+        .main .box2{
+            position: absolute;
+            top: 300px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color:darkslategray;
+            width: 500px;
+            height: 100px;
+        }
+
+        .main label{
+            position: absolute;
+            top: 0px;
+            left: 50px;
+            transform: translateY(-50%);
+            font-size: 20px;
+            color:white;
+        }
+
+        .main input{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 400px;
+            height: 50px;
+            border-radius: 10px;
+        }
+
+        button{
+            position: absolute;
+            bottom: 250px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 50px;
+            border-radius: 10px;
+        }
+
+        a{
+            position: absolute;
+            bottom: 200px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .alert {
+            position: absolute;
+            top: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+    </style>
+
+
+</head>
+<body>
+    
+    <div id="warp">
+
+        <div class="header">
+            <div>
+                <h2>로그인</h2>
+            </div>
+        </div>
+        <div class="main">
+
+            <form th:action="@{/user/login}" method="post">
+        
+                <div th:if="${param.error}">
+                    <div class="alert alert-danger">
+                        사용자ID 또는 비밀번호를 확인해 주세요.
+                    </div>
+                </div>
+                
+                <div class="box1">
+                    <label for="customerId" class="">ID</label><br>
+                    <input type="text" name="username" id="username" class="">
+                </div>
+                
+                <div class="box2">
+                    <label for="password" class="">PASSWORD</label><br>
+                    <input type="password" name="password" id="password" class="">
+                </div>
+                
+                <button type="submit" class="btn btn-warning">로그인</button>
+                
+            </form>
+            
+            <a th:href="@{/user/signup}">회원가입을 아직 하지 않으셨나요?</a>
+
+        </div>
+      
+    </div>
+
+</body>
+</html>
+
+
+

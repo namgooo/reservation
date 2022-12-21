@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css"/>
+    
+</head>
+
+<body>
+    <div id="warp">
+
+        <!--사이드바 시작-->
+        <div class="checkboxmain">
+            <input type="checkbox" id="menuicon">
+            <label for="menuicon">
+                <span></span>
+                <span></span>
+            </label>
+            <div class="sidebar">
+                <div class="sidebarmain">
+                    <ul>
+                    	<li>
+                            <a th:href="@{/main}">홈으로</a>
+                        </li>
+                    	<li>
+                   			<div class="user" sec:authorize="isAuthenticated()">
+                   				<a sec:authentication="name"></a><span>님</span>
+                   			</div>
+                    	</li>
+                        <li>
+                            <a sec:authorize="isAnonymous()" th:href="@{/user/login}">로그인</a>
+                            <a sec:authorize="isAuthenticated()" th:href="@{/user/logout}">로그아웃</a>
+                        </li>
+                        <li>
+                            <a th:href="@{/mypage}">마이페이지</a>
+                        </li>
+                        <li>
+                            <a th:href="@{/user/signup}">회원가입</a>
+                        </li>
+                        <li>
+                            <a th:href="@{/review}">리뷰</a>
+                        </li>
+                        <li>
+                            <a th:href="@{/reservation/create}">예약</a>
+                        </li>
+                        <li>
+                            <a sec:authorize="hasRole('ADMIN')" th:href="@{/manager}">관리자 페이지</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--사이드바 끝-->
+
+        <div class="header">  <!--헤더 시작-->
+            <div class="title">
+                <h1>THE RESTAURANT</h1>
+            </div>
+            <div class="nav">
+            </div>
+        </div> <!--헤더 끝-->
+
+        <div class="main"> <!--메인 시작-->
+        	<span th:text="${error}">접근이 불가능합니다!</span>
+
+            <div class="hends">
+                <img src="img/hends3.png" alt="">
+            </div>
+
+            <div class="slick">
+                <div class="slicks">
+                    <a th:href="@{restaurant1}"><img src="img/showoten5.jpeg" alt="#"></a>
+                </div>
+                <div class="slicks">
+                    <a th:href="@{restaurant2}"><img src="img/suwoodong6.jpg" alt="#"></a>
+                </div>
+                <div class="slicks">
+                    <a th:href="@{restaurant3}"><img src="img/myoungmul7.jpg" alt="#"></a>
+                </div>
+                <div class="slicks">
+                    <a th:href="@{restaurant4}"><img src="img/kyungyang8.jpg" alt="#"></a>
+                </div>
+                <div class="slicks">
+                    <a th:href="@{restaurant5}"><img src="img/baengdi6.jpeg" alt="#"></a>
+                </div>
+                <div class="slicks">
+                    <a th:href="@{/restaurant6}"><img src="img/jinri8.jpg" alt="#"></a>
+                </div>
+            </div>
+        </div> <!--메인 끝-->
+
+        <div class="footer"> <!--풋터 시작-->
+
+        </div> <!--풋터 끝-->
+    </div>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $('.slick').slick({
+                slidesToShow: 5,
+                autoplay: true,
+                autoplaySpeed: 2000,
+            });
+        });
+    </script>
+
+</body>
+
+
+</html>
+		
+
+		

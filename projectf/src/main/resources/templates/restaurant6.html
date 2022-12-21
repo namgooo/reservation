@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>restaurant6</title>
+
+    <style>
+
+        .text{
+            position: fixed;
+            left: 20px;
+            top: 20px;
+            color: #ddd;
+            z-index: 1000;
+            }
+        
+        .fixed_bg{
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .slide{
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%; 
+            color: #fff;
+            padding: 50px;
+        } 
+
+        .slide-content{
+            width: 60%;
+            margin: 0 auto;
+        }
+
+        .slide4{
+            background: url(img/stars.gif);
+            background-size: cover;
+        }
+
+        h2{
+            position: absolute;
+            top: -70px;
+            left: 500px;
+            font-size: 50px;
+        }
+
+        .img1{
+            width: 1000px;
+            height: 600px;
+            top: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+            position: absolute;
+        }
+
+        .img2{
+            position: absolute;
+            top: 100px;
+            left: 280px;
+            width: 600px;
+            height: 500px;
+            border-radius: 50px;
+        }
+
+        .img3{
+            position: absolute;
+            top: 300px;
+            right: 400px;
+            width: 600px;
+            height: 500px;
+            border-radius: 50px;
+        }
+
+        .img4{
+            position: absolute;
+            top: 120px;
+            left: 150px;
+            width: 500px;
+            height: 400px;
+            border-radius: 50px;
+        }
+
+        .img5{
+            position: absolute;
+            top: 270px;
+            right: 800px;
+            width: 500px;
+            height: 400px;
+            border-radius: 50px;
+        }
+
+        .img6{
+            position: absolute;
+            top: 430px;
+            right: 250px;
+            width: 500px;
+            height: 400px;
+            border-radius: 50px;
+        }
+
+        .img7{
+            position: absolute;
+            top: 0px;
+            left: 400px;
+            width: 1100px;
+            height: 750px;
+        }
+
+        .img8{
+            position: absolute;
+            top: 110px;
+            left: 320px;
+            width: 650px;
+            height: 700px;
+        }
+
+        .info{
+            position: relative;
+            top: 200px;
+            left: 750px;
+            width: 400px;
+            height: 400px;
+        }
+        
+        h3{
+            font-size: 30px;
+        }
+
+        .span1{
+            position: absolute;
+            top: 50px;
+        }
+        
+        .span2{
+            position: absolute;
+            top: 100px;
+        }
+
+        .span3{
+            position: absolute;
+            top: 120px;
+        }
+
+        .span4{
+            position: absolute;
+            top: 140px;
+        }
+
+        .span5{
+            position: absolute;
+            top: 160px;
+        }
+
+        .span6{
+            position: absolute;
+            top: 210px;
+        }
+
+
+        .btn{
+            position: absolute;
+            bottom: 90px;
+            left: 0px;
+            width: 100px;
+            height: 30px;
+            background-color: yellow;
+            border-radius: 5px;
+            text-align: center;
+            text-decoration: none;
+            line-height: 25px;
+        }
+
+        .home{
+            position: absolute;
+            bottom: 60px;
+            left: 0px;
+            color: blue;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div id="warp">
+
+        <div class="fixed_bg" 
+        data-0="background-color:rgb(000, 000, 000);"
+        data-1000="background-color:rgb(000, 000, 000);
+                   width:100%; left:0%;"
+        ></div>
+
+        <section class="slide slide1"
+            data-0="top:10%"
+            data-500="top:-100%"
+        >
+            <div class="slide-content">
+                <h2>양산 진리식당</h2>
+                <img class="img1" src="/img/jinri1.jpg" alt="이미지1">
+            </div>
+        </section>
+        
+        <section class="slide slide2"
+            data-500="left:-100%; opacity:0;"
+            data-1500="left: 0%; opacity:1;"
+            data-2000="opacity:0; "
+            
+            >
+            <div class="slide-content">
+                <img class="img2" src="/img/jinri2.jpeg" alt="이미지2">
+                <img class="img3" src="/img/jinri3.jpg" alt="이미지3">
+            </div>
+        </section>
+
+        <section class="slide slide3"
+            data-2000="top:-100%; opacity:0"
+            data-2500="top:0%; left: 0%; opacity:1"
+            data-3000="opacity:0; "
+            >
+
+            <div class="slide-content">
+                <img class="img4" src="/img/jinri4.jpeg" alt="이미지4">
+                <img class="img5" src="/img/jinri5.jpg" alt="이미지5">
+                <img class="img6" src="/img/jinri6.jpg" alt="이미지6">
+            </div>
+        </section>
+
+        <section class="slide slide4"
+            data-2500="left:-100%; opacity:0"
+            data-3000="left:0%; top:10%; opacity:1"
+            data-3500="opacity:0;"
+            >
+            <div class="slide-content">
+                <img class="img7" src="/img/jinri7.jpg" alt="이미지7">
+            </div>
+        </section>
+
+        <section class="slide slide5"
+            data-3000="top:-100%; opacity:0"
+            data-3500="top:0%; left: 0%; opacity:1"
+            data-4000="opacity:1"
+        >
+            <div class="slide-content">
+
+                <img class="img8" src="/img/jinri8.jpg" alt="이미지8">
+                <div class="info">
+                    <h3>진리식당</h3>
+                    <span class="span1">경남 양산시 물금읍 화산길 10-1 진리식당</span>
+                    <span class="span2">매일 11:00에 영업 시작</span>
+                    <span class="span3">11:00 - 20:30</span>
+                    <span class="span4">15:30 - 17:00 브레이크타임</span>
+                    <span class="span5">15:00, 20:00 라스트오더</span>
+                    <span class="span6">단체석, 주차, 포장, 배달, 무선 인터넷, <br>
+                                        반려동물 동반, 남/녀 화장실 구분, 장애인 편의시설</span>
+    
+                    <a class="btn" th:href="@{/reservation/create}">예약하기</a>
+                    <a class="home" th:href="@{/main}">HOME으로 돌아가기</a>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js"></script>
+
+    <script>
+        var s = skrollr.init();
+
+        var text =document.querySelector('.text');
+
+        window.addEventListener("scroll",function(){
+            var wScroll = window.pageYOffset;
+        text.innerHTML = wScroll;
+        })
+    </script>
+    
+</body>
+</html>
